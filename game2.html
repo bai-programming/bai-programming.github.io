@@ -1,7 +1,7 @@
  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
  <HEAD>
-  <TITLE> Bai's Game </TITLE>
+  <TITLE> Bai's Game(hard) </TITLE>
   <style>
   body, html{
   width: 100%;
@@ -22,10 +22,10 @@ canvas{
  </HEAD>
 
  <BODY>
- 	<div style="text-align:center">
+ 	 <div style="text-align:center">
  		<a href="index.html">打不过qwq我要回主页</a>
  		<br>
- 		<a href="game2.html">太简单awa来个难点的</a>
+ 		<a href="game.html">太难了ono简单一点吧</a>
  	</div>
  <canvas id="canvas"></canvas>
   <script>
@@ -52,12 +52,15 @@ canvas{
 	    evil,
 	    bullet,
 	    evilBullet,
+	    evilBullet2,
 	    friction,
 	    gravity,
 	    enemy1,
 	    enemy2,
 	    enemy3,
+	    enemy4,
 	    sniper,
+	    sniper2,
 	    hellfire;
 
 	//reset function to set/re-set globals 
@@ -105,20 +108,28 @@ canvas{
 	    evilBullet = {
 	    	x: -10,
 	    	y: -10,
-	    	width: 10,
-	    	height: 10,
-	    	speed: 8,
+	    	width: 5,
+	    	height: 5,
+	    	speed: 10,
 	    	mortal: false	
 	    };
+	    evilBullet2 = {
+	    	x: -10,
+	    	y: -10,
+	    	width: 5,
+	    	height: 5,
+	    	speed: 10,
+	    	mortal: false	
+	    };	    
 	    friction = 0.8;
 	    gravity = 0.8;
 	    enemy1 = {
 	    	color: '#E3504B',
 	    	x: 120,
-	    	y: 200,
-	    	width: 40,
+	    	y: 120,
+	    	width: 10,
 	    	height: 40,
-	    	speed: 4,
+	    	speed: 6,
 	    	direction: 'down',
 	    	alive: true,
 	    	mortal: true
@@ -128,7 +139,7 @@ canvas{
 	    	y: 360,
 	    	width: 40,
 	    	height: 40,
-	    	speed: 2,
+	    	speed: 5,
 	    	direction: 'right',
 	    	alive: true,
 	    	mortal: true,
@@ -138,11 +149,23 @@ canvas{
 	    	y: 40,
 	    	width: 40,
 	    	height: 40,
-	    	speed: 2,
+	    	speed: 4,
 	    	direction: 'left',
 	    	alive: true,
 	    	mortal: true
 	    };
+
+	    enemy4 = {
+	    	x: 760,
+	    	y: 200,
+	    	width: 40,
+	    	height: 40,
+	    	speed: 3,
+	    	direction: 'left',
+	    	alive: true,
+	    	mortal: true
+	    };
+
 	    sniper = {
 	    	x: 316,
 	    	y: 200,
@@ -152,6 +175,17 @@ canvas{
 	    	mortal: true,
 	    	shot: false,
 	    };
+
+	    sniper2 = {
+	    	x: 646,
+	    	y: 40,
+	    	width: 40,
+	    	height: 40,
+	    	alive: true,
+	    	mortal: true,
+	    	shot: false,
+	    };
+
 	    hellfire = {
 	    	x: 266,
 	    	y: height - 40,
@@ -165,9 +199,11 @@ canvas{
 		evil.push(hellfire);
 		evil.push(enemy2);
 		evil.push(enemy3);
+		evil.push(enemy4);
 		evil.push(sniper);
+		evil.push(sniper2);
 		evil.push(evilBullet);
-
+		evil.push(evilBullet2);
 		//bumpers[invisible terrain] for enemy patrols
 		bumpers.push({
 			x: 276,
@@ -195,8 +231,18 @@ canvas{
 			width: 40,
 			height: 40
 		});
-
-
+		bumpers.push({
+		    x: 606,
+		    y: 200,
+		    width: 40,
+		    height: 40
+		});
+		bumpers.push({
+		    x: 766,
+		    y: 200,
+		    width: 40,
+		    height: 40
+		});
 		// Terrain
 
 		//left-wall
@@ -303,11 +349,19 @@ canvas{
 		    height: 40
 		});
 
-		//platform-6
+		//platform-7
 		terrain.push({
 		    x: 646,
 		    y: 80,
 		    width: 160,
+		    height: 40
+		});
+
+		//platform-8
+		terrain.push({
+		    x: 226,
+		    y: 346,
+		    width: 40,
 		    height: 40
 		});
 
@@ -399,6 +453,12 @@ canvas{
 	        	sniper.shot = false;
 	        }
 
+	        //evil-bullet-terrain collision
+	        var dtr = colCheck(evilBullet2, terrain[i]);
+
+	        if (dtr != null){
+	        	sniper2.shot = false;
+	        }
 
 	        //enemy1-terrain collision
 	        var dbz = colCheck(enemy1, terrain[i]);
@@ -471,13 +531,20 @@ canvas{
 	        if (diz === "r") {
 	        	enemy3.direction = 'left';
 	        }
+	        var diy = colCheck(enemy4, bumpers[i]);
+	        if (diy === "l") {
+	        	enemy4.direction = 'right';
+	        }
+	        if (diy === "r") {
+	        	enemy4.direction = 'left';
+	        }        	
 	    }
 
 
 	    //Enemy Actions
 	    if(enemy1.alive){
 	    	if(enemy1.direction === 'down'){
-		    	enemy1.y += enemy1.speed;
+		    	enemy1.y += enemy1.speed*3;
 		    }else if(enemy1.direction === 'up'){
 		    	enemy1.y -= enemy1.speed;
 		    }
@@ -497,13 +564,30 @@ canvas{
 		    }else if(enemy3.direction === 'left'){
 		    	enemy3.x -= enemy3.speed;
 		    }
-	    }
+		   }
+
+	    if(enemy4.alive){
+	    	if(enemy4.direction === 'right'){
+		    	enemy4.x += enemy4.speed;
+		    }else if(enemy4.direction === 'left'){
+		    	enemy4.x -= enemy4.speed;
+		    }
+		   }
 
 	    if(sniper.alive){
 	    	if(sniper.shot === false){
 	    		evilBullet.x = sniper.x + 40;
-	    		evilBullet.y = sniper.y + 15;
+	    		evilBullet.y = sniper.y + 25;
 	    		sniper.shot = true;
+
+	    	}
+	    }
+
+	    if(sniper2.alive){
+	    	if(sniper2.shot === false){
+	    		evilBullet2.x = sniper2.x + 40;
+	    		evilBullet2.y = sniper2.y + 25;
+	    		sniper2.shot = true;
 
 	    	}
 	    }
@@ -511,7 +595,11 @@ canvas{
 	    if(sniper.shot){
 	    	evilBullet.x += evilBullet.speed;
 	    }
-	    
+
+	    if(sniper2.shot){
+	    	evilBullet2.x -= evilBullet2.speed;
+	    }
+
 	    //Player Actions
 	    if(player.grounded){
 	         player.velY = 0;
