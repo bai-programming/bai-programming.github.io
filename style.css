@@ -1,3 +1,7 @@
+* {
+	font-family: "Segoe Print";
+}
+
 body, html{
 	background-color:blanchedalmond;
 	width: 100%;
@@ -21,4 +25,8 @@ li{
 
 .center{
 	text-align:center;
+}
+
+.avatar{
+	border-radius: 100%;
 }
