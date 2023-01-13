@@ -8,28 +8,48 @@
 </head>
 <body>
 	<style>
-		#welcome{
+		#prompt{
 			display: none;
-			font-size: 50px;
+			font-size: 30px;
 		}
 	</style>
 
 	<div class="center">
 		<h1>꧁༺Bai's༒Website༻꧂</h1>
 		<hr>
-		<li><a href="game/menu.html">Game</a>
-		<li><a href="history.html">History</a>
 		<li>
-			<a href="https://github.com/bai-programming" target="_blank">My Account on GitHub
+			<a href="game/menu.html"
+			onmouseover="setPrompt('Interesting Games =)');setPromptDisplay('block')"
+			onmouseout="setPromptDisplay('none')">Game</a>
+
+		<li>
+			<a href="history.html"
+			onmouseover="setPrompt('History of my Website');setPromptDisplay('block')"
+			onmouseout="setPromptDisplay('none')">History</a>
+
+		<li>
+			<a href="https://github.com/bai-programming" target="_blank"
+			onmouseover="setPrompt('Welcome to my Account on GitHub!');setPromptDisplay('block')"
+			onmouseout="setPromptDisplay('none')">My Account on GitHub
 			<br/><br/>
 			<img src="img/Avatar.jpg" width=100px height=100px class="circle"
-			onmouseover="document.getElementById('welcome').style.display='block'"
-			onmouseout="document.getElementById('welcome').style.display='none'"
-			/>
+			onmouseover="setPrompt('Welcome to my Account on GitHub!');setPromptDisplay('block')"
+			onmouseout="setPromptDisplay('none')"/>
 			</a>
-			<div id=welcome>Welcome!</div>
+			<div id=prompt></div>
 			
 	</div>
+
+	<script>
+		var setPrompt = function(content)
+		{
+			document.getElementById('prompt').textContent = content
+		}
+		var setPromptDisplay = function(state)
+		{
+			document.getElementById('prompt').style.display = state
+		}
+	</script>
 
 </body>
 
