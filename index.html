@@ -8,10 +8,8 @@
 </head>
 <body>
 	<style>
-		#prompt{
-			display: none;
-			font-size: 30px;
-		}
+
+
 	</style>
 
 	<div class="center">
@@ -19,37 +17,37 @@
 		<hr>
 		<li>
 			<a href="game/menu.html"
-			onmouseover="setPrompt('Interesting Games =)');setPromptDisplay('block')"
-			onmouseout="setPromptDisplay('none')">Game</a>
+			onmouseover="setFooter('Interesting Games =)')"
+			onmouseout="setFooter(email)">Game</a>
 
 		<li>
 			<a href="history.html"
-			onmouseover="setPrompt('History of my Website');setPromptDisplay('block')"
-			onmouseout="setPromptDisplay('none')">History</a>
+			onmouseover="setFooter('History of my Website')"
+			onmouseout="setFooter(email)">History</a>
 
 		<li>
 			<a href="https://github.com/bai-programming" target="_blank"
-			onmouseover="setPrompt('Welcome to my Account on GitHub!');setPromptDisplay('block')"
-			onmouseout="setPromptDisplay('none')">My Account on GitHub
+			onmouseover="setFooter('Welcome to my Account on GitHub!')"
+			onmouseout="setFooter(email)">My Account on GitHub
 			<br/><br/>
 			<img src="img/Avatar.jpg" width=100px height=100px class="circle"
-			onmouseover="setPrompt('Welcome to my Account on GitHub!');setPromptDisplay('block')"
-			onmouseout="setPromptDisplay('none')"/>
+			onmouseover="setFooter('Welcome to my Account on GitHub!')"
+			onmouseout="setFooter(email)"/>
 			</a>
-			<div id=prompt></div>
 			
 	</div>
 
 	<script>
-		var setPrompt = function(content)
+		var email = "Email:3534159509@qq.com"
+		var setFooter = function(content)
 		{
-			document.getElementById('prompt').textContent = content
-		}
-		var setPromptDisplay = function(state)
-		{
-			document.getElementById('prompt').style.display = state
+			document.getElementById('footer').textContent = content
 		}
 	</script>
+
+	<div id="footer">
+		Email:3534159509@qq.com
+	</div>
 
 </body>
 

@@ -35,3 +35,15 @@ li{
 .circle{
 	border-radius: 100%;
 }
+
+#footer{
+	text-align:center;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 60px;
+	font-size: 30px;
+	background-color: #eee;
+	z-index: 9999;
+}
