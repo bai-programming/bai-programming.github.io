@@ -26,6 +26,11 @@
 			onmouseout="setFooter(email)">History</a>
 
 		<li>
+			<a href="email.html"
+			onmouseover="setFooter('Email Bai by EmailJS')"
+			onmouseout="setFooter(email)">Email</a>
+
+		<li>
 			<a href="https://github.com/bai-programming" target="_blank"
 			onmouseover="setFooter('Welcome to my Account on GitHub!')"
 			onmouseout="setFooter(email)">My Account on GitHub
@@ -38,7 +43,7 @@
 	</div>
 
 	<script>
-		var email = "Email:3534159509@qq.com"
+		var email = "Email:3534159509@qq.com|Copyright© 2023 by bai-programming"
 		var setFooter = function(content)
 		{
 			document.getElementById('footer').textContent = content
@@ -46,7 +51,7 @@
 	</script>
 
 	<div id="footer">
-		Email:3534159509@qq.com
+		Email:3534159509@qq.com|Copyright© 2023 by bai-programming
 	</div>
 
 </body>
