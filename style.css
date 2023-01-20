@@ -12,12 +12,15 @@
 	font-family: "Segoe Print";
 }
 
-body, html{
+html{
+	overflow: hidden;
+	overflow-y:auto;
+}
+
+body,html{
 	background-color:blanchedalmond;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
-	overflow-y:auto;
 }
 
 canvas{
@@ -50,17 +53,13 @@ textarea{
 	border-radius: 100%;
 }
 
-.cour{
-	font-family: "Cour";
-}
-
 #footer{
+	font-family: "Cour";
 	text-align:center;
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
 	width: 100%;
-	height: 50px;
 	font-size: 30px;
 	background-color: #eee;
 	z-index: 9999;

@@ -18,35 +18,21 @@
 			<ul>
 				<br/>
 				<img src="../img/screenshot1.jpg" width=300px height=300px class="circle"/>
-				<li>
-					<a href="game1/easy.html"
-					onmouseover="setFooter('A Easy Game')"
-					onmouseout="setFooter(email)">Easy</a>
 
 				<li>
-					<a href="game1/hard.html"
-					onmouseover="setFooter('Another Easy Game=)')"
-					onmouseout="setFooter(email)">Hard</a>
+					<a href="game1/easy.html" data-prompt="A Easy Game">Easy</a>
 
 				<li>
-					<a href="game1/info.html"
-					onmouseover="setFooter('Game Description')"
-					onmouseout="setFooter(email)">How to Play?</a>
+					<a href="game1/hard.html" data-prompt="Another Easy Game=)">Hard</a>
+
+				<li>
+					<a href="game1/info.html" data-prompt="Game Description">How to Play?</a>
 
 			</ul>
 	</ul>
 
-	<script>
-		var email = "Copyright© 2023 by bai-programming. All rights reserved."
-		var setFooter = function(content)
-		{
-			document.getElementById('footer').textContent = content
-		}
-	</script>
+	<script src="../js/footer.js"></script>
 
-	<div id="footer" class="cour">
-		Copyright© 2023 by bai-programming. All rights reserved.
-	</div>
 </body>
 
 </style>
