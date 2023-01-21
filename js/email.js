@@ -1,4 +1,3 @@
-msg = document.getElementById('message');
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

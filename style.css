@@ -33,8 +33,20 @@ canvas{
 	bottom: 0;
 }
 
+a{
+	transition-duration: 2s;
+}
+
+a:not([data=noHover]):hover{
+	background-color: white;
+	border-radius: 12px;
+	font-size: 60px;
+}
+
 
 li{
+	font-weight: lighter;
+	text-shadow: 10px 10px 10px #000;
 	margin-bottom: 30px;
 }
 
