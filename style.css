@@ -1,24 +1,24 @@
 @font-face {
-   font-family :  'Segoe Print' ;
-   src :  url('font/segoepr.ttf');
+   font-family: 'Segoe Print' ;
+   src: url('font/segoepr.ttf');
 }
 
 @font-face {
-   font-family :  'Cour' ;
-   src :  url('font/courbd.ttf');
+   font-family: 'Cour';
+   src: url('font/courbd.ttf');
 }
 
 * {
 	font-family: "Segoe Print";
 }
 
-html{
-	overflow: hidden;
-	overflow-y:auto;
+body{
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 body,html{
-	background-color:blanchedalmond;
+	background:blanchedalmond;
 	width: 100%;
 	height: 100%;
 }
@@ -33,19 +33,26 @@ canvas{
 	bottom: 0;
 }
 
-a{
+
+a:not([data-atag=no]){
+	border-radius: 12px;
+	background: white;
+	text-decoration: none;
+	outline: none;
+	color: #000;
 	transition-duration: 2s;
 }
 
-a:not([data=noHover]):hover{
-	background-color: white;
-	border-radius: 12px;
-	font-size: 60px;
+a:not([data-atag=no]):not(h1 a):hover{
+	font-size: 24px;
 }
 
+a:not([data-atag=no]):hover{
+	background: gray;
+	color: white;
+}
 
 li{
-	font-weight: lighter;
 	text-shadow: 10px 10px 10px #000;
 	margin-bottom: 30px;
 }
@@ -75,4 +82,21 @@ textarea{
 	font-size: 30px;
 	background-color: #eee;
 	z-index: 9999;
+}
+
+::-webkit-scrollbar {
+width: 20px;
+height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 5px gray;
+background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 5px gray;
+border-radius: 10px;
+background: white;
 }

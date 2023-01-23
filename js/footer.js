@@ -1,4 +1,7 @@
-document.write("<div id='footer'>");
+
+var divObj = document.createElement('div')
+divObj.id = "footer"
+document.body.appendChild(divObj)
 var c = "Copyright© 2023 by bai-programming. All rights reserved.";
 var setFooter = function(content)
 {
