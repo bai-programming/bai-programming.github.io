@@ -93,7 +93,7 @@ function reset(){
     	color: '#E3504B',
     	x: 120,
     	y: 120,
-    	width: 10,
+    	width: 40,
     	height: 40,
     	speed: 6,
     	direction: 'down',
