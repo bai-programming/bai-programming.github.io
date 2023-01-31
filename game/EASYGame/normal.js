@@ -308,7 +308,7 @@ function reset(){
 	//platform-8
 	terrain.push({
 	    x: 226,
-	    y: 346,
+	    y: 360,
 	    width: 40,
 	    height: 40
 	});

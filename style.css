@@ -106,7 +106,7 @@ textarea{
 	bottom: 0px;
 	width: 100%;
 	font-size: 30px;
-	background-color: #eee;
+	background-color: rgba(16, 16, 16, 0.5);
 	z-index: 9999;
 }
 
