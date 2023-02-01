@@ -1,4 +1,4 @@
-$("body").append("<div id=\"footer\">")
+$("body").append(`<div id='footer'>`)
 var c = "Copyright© 2023 by bai-programming. All rights reserved.";
 var setFooter = function(content){$('#footer')[0].textContent = content;}
 setFooter(c);

@@ -99,6 +99,8 @@ textarea{
 }
 
 #footer{
+	margin-bottom: 10px;
+	padding: 10px;
 	font-family: "Cour";
 	text-align:center;
 	position: fixed;
