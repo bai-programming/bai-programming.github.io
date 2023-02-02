@@ -43,7 +43,7 @@ input{
 	transition-duration: 1.2s;
 }
 
-input:hover{
+input:hover:not(input:active){
 	background: rgba(0,0,0,0.75);
 	border-top-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -53,8 +53,7 @@ input:hover{
 
 input:active{
 	background: black;
-	border-top-left-radius: 0px;
-	border-bottom-right-radius: 0px;
+	border-radius: 10px;
 	border: 2px solid black;
 	color: white;
 }
@@ -62,10 +61,13 @@ input:active{
 a:not([data-atag="img"]){
 	border-top-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	background: white;
+	background: rgba(255, 255, 255, 0.7);
 	text-decoration: none;
 	outline: none;
-	color: #000;
+	color: black;
+}
+
+a{
 	transition-duration: 1.2s;
 }
 
@@ -79,8 +81,9 @@ a:not([data-atag="img"]):hover{
 }
 
 li{
+	list-style: none;
 	text-shadow: 10px 10px 10px #000;
-	margin-bottom: 3%;
+	margin-bottom: 2%;
 }
 
 textarea{
@@ -95,7 +98,12 @@ textarea{
 }
 
 .circle{
-	border-radius: 100%;
+	border-radius: 50%;
+	transition-duration: 1.2s;
+}
+
+.circle:hover{
+	border-radius: 10%;
 }
 
 #footer{
