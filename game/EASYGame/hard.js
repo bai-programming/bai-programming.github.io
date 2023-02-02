@@ -145,7 +145,7 @@ function reset(){
     	width: 40,
     	height: 40,
     	alive: true,
-    	mortal: false,
+    	mortal: true,
     	shot: false,
     };
     hellfire = {
