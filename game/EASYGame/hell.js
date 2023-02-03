@@ -79,49 +79,53 @@ function reset(){
     	width: 5,
     	height: 5,
     	speed: 10,
-    	mortal: false	
+    	mortal: false,	
     };
     evilBullet2 = {
     	x: -10,
     	y: -10,
-    	width: 5,
-    	height: 5,
-    	speed: 10,
-    	mortal: false	
+    	width: 40,
+    	height: 40,
+    	speed: 1,
+    	mortal: false,
+    	undead: true,
     };	    
     friction = 0.8;
     gravity = 0.6;
     enemycolor = '#E3504B';
     undeadcolor = '#4B1A19';
     enemy1 = {
-    	x: 120,
+    	x: 100,
     	y: 120,
-    	width: 40,
-    	height: 40,
+    	width: 50,
+    	height: 50,
     	speed: 6,
     	direction: 'down',
     	alive: true,
-    	mortal: true
+    	mortal: true,
+    	undead: true,
     };
     enemy2 = {
     	x: 316,
-    	y: 360,
-    	width: 40,
-    	height: 40,
-    	speed: 5,
+    	y: 320,
+    	width: 10,
+    	height: 80,
+    	speed: 4,
     	direction: 'right',
     	alive: true,
     	mortal: true,
+    	undead: true,
     };
     enemy3 = {
     	x: 556,
     	y: 40,
     	width: 40,
     	height: 40,
-    	speed: 4,
+    	speed: 2,
     	direction: 'left',
     	alive: true,
-    	mortal: true
+    	mortal: true,
+    	undead: true,
     };
     enemy4 = {
     	x: 760,
@@ -131,7 +135,8 @@ function reset(){
     	speed: 3,
     	direction: 'left',
     	alive: true,
-    	mortal: true
+    	mortal: true,
+    	undead: true,
     };
     sniper = {
     	x: 316,
@@ -157,7 +162,7 @@ function reset(){
     	y: height - 40,
     	width: width - 266,
     	height: 40,
-    	mortal: false
+    	mortal: false,
     };
 	//enemies into evil for collision
 	evil.push(enemy1);
@@ -195,7 +200,7 @@ function reset(){
 		height: 40
 	});
 	bumpers.push({
-	    x: 606,
+	    x: 506,
 	    y: 200,
 	    width: 40,
 	    height: 40
@@ -507,8 +512,8 @@ function update() {
     }
     if(sniper2.alive){
     	if(sniper2.shot === false){
-    		evilBullet2.x = sniper2.x + 40;
-    		evilBullet2.y = sniper2.y + 25;
+    		evilBullet2.x = sniper2.x;
+    		evilBullet2.y = sniper2.y;
     		sniper2.shot = true;
     	}
     }
